@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+jon:
+  name: Jon Snow
+  description: Lorem ipsum ...
+  image_url: https://0.academia-photos.com/39390629/11476471/12800482/s200_an.zou.jpg
+  twitter: https://twitter.com/_hackvan

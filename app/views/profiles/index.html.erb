@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="profile">
+      <div class="col-md-4">
+        <a href="<%= @profile.image_url %>">
+          <img src="<%= @profile.image_url %>" alt="profile picture" class="img-thumbnail">
+        </a>
+        <p><a href="<%= @profile.twitter %>"><%= @profile.twitter %></a></p>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Timeline</h3>
+          </div>
+          <div class="panel-body">
+            <p>...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <h2><%= @profile.name %></h2>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">My Work Experience</h3>
+          </div>
+          <div class="panel-body">
+            <%= @profile.description %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
