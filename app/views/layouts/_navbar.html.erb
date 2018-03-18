@@ -15,9 +15,16 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li class="nav-item">
-            <%= link_to "Sign In", "#" %>
-          </li>
+          <% if logged_in? %>
+            <li class="nav-item <%= 'current' if current_page?(edit_path) %>">
+              <%= link_to "Edit", edit_path %>
+            </li>
+            <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
+          <% else %>
+            <li class="nav-item <%= 'current' if current_page?(login_path) %>">
+              <%= link_to "Sign In", login_path %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

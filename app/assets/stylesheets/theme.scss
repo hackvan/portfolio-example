@@ -4,8 +4,12 @@ body {
  }
 
 .navbar-default {
-   background-color: #fafafb;
-   border-top: 3px solid #F48024 /* #F48024 */ ;
+  background-color: #fafafb;
+  border-top: 3px solid #337ab7;
+}
+
+.navbar-nav > .current {
+  border-bottom: 2px solid #337ab7;
 }
 
 .field_with_errors {

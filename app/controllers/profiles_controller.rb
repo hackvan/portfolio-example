@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:index, :edit, :update]
+  before_action :authenticate_user!, only: [:edit, :update]
 
   def index
   end
@@ -10,7 +11,7 @@ class ProfilesController < ApplicationController
   def update
     if @profile.update(profile_params)
       flash[:success] = 'the portfolio has been updated successfully'
-      redirect_to profile_path
+      redirect_to root_path
     else
       render :edit
     end
