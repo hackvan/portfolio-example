@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   namespace :zemoga_portfolio_api, defaults: {format: :json} do
-      get '/user_info', to: 'profiles#index'
+      get  '/user_info',        to: 'profiles#index'
+      post '/modify_user_info', to: 'profiles#update'
   end
 
 end
