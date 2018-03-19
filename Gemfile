@@ -18,6 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
+gem 'twitter', '~> 6.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

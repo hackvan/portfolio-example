@@ -5,13 +5,38 @@
         <a href="<%= @profile.image_url %>">
           <img src="<%= @profile.image_url %>" alt="profile picture" class="img-thumbnail">
         </a>
-        <p><a href="<%= @profile.twitter %>"><%= @profile.twitter %></a></p>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Timeline</h3>
-          </div>
-          <div class="panel-body">
-            <p>...</p>
+        <p></p>
+        <div class="twt-wrapper">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a href="https://twitter.com/<%= @profile.twitter %>"><%= @profile.twitter %>'s Timeline</a></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="media-list">
+                    <% @timeline.each do |tweet| %>
+                      <li class="media">
+                        <a href="#" class="pull-left">
+                          <img src="<%= image_path(tweet.user.profile_image_url_https.to_s.gsub('_normal','')) %>" alt="" class="img-circle">
+                        </a>
+                        <div class="media-body">
+                          <span class="text-muted pull-right">
+                            <small class="text-muted"><%= time_ago_in_words(tweet.created_at) %></small>
+                          </span>
+                          <strong class="text-success"><%= "@#{tweet.user.screen_name}" %></strong>
+                          <p class="text-muted"><%= tweet.text %></p>
+                          <p class="text-muted pull-right">
+                            <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> <%= tweet.retweet_count %>
+                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <%= tweet.favorite_count %>
+                          </p>
+                        </div>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
