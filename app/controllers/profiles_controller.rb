@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
 
   def index
-    @timeline = @profile.twitter_timeline(@profile.twitter, 5)
+    @timeline = @profile.twitter_timeline(@profile.twitter_username, 5)
   end
 
   def edit
@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
 
     def profile_params
       params.require(:profile)
-            .permit(:name, :description, :image_url, :twitter)
+            .permit(:name, :description, :image_url, :twitter_username)
     end
 
 end

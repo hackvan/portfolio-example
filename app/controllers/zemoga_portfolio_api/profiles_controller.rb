@@ -17,6 +17,6 @@ class ZemogaPortfolioApi::ProfilesController < ApplicationController
   private
     def profile_params
       params.require(:profile)
-            .permit(:name, :description, :image_url, :twitter)
+            .permit(:name, :description, :image_url, :twitter_username)
     end
 end
