@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
 
   def index
-    @timeline = @profile.twitter_timeline(@profile.twitter_username, 5)
+    @timeline = TwitterManager::TweetReader.call(@profile.twitter_username, 5)
   end
 
   def edit
